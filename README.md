@@ -4,6 +4,7 @@
 
 User — пользователь
 Test — тест
+Category — категория теста
 Question — вопрос
 Answer — ответ на вопрос
-Result — результат теста
+Completion — факт прохождения теста
