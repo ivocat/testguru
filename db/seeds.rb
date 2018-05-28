@@ -5,3 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+users = User.create!([{name: 'John', is_admin: false}, {name: 'Admin', is_admin: true}])
+
+categories = Category.create([
+  {name: 'Programming'},
+  {name: 'Math'},
+  {name: 'History'}
+])
+
+tests = Test.create!([
+  {title: 'Programming languages', level: 1, category_id: categories[0].id},
+  {title: 'Quick maths', level: 0, category_id: categories[1].id},
+])
+
+questions = Question.create!([
+  {title: 'Favorite language', body: 'What is your favorite programming langueage?', test_id: tests[0].id},
+  {title: 'Rails', body: 'What is Ruby on Rails?', test_id: tests[0].id},
+  {title: 'Rails uses', body: 'What is Rails designed for?', test_id: tests[0].id},
+  {title: '2 + 2', body: '2 + 2 = ?', test_id: tests[1].id},
+  {title: '4 - 1', body: '4 - 1 = ?', test_id: tests[1].id}
+])
+
+answers = Answer.create!([
+  {title: 'C++', correct: false, question_id: questions[0].id},
+  {title: 'Ruby', correct: true, question_id: questions[0].id},
+  {title: 'Haskell', correct: false, question_id: questions[0].id},
+  {title: 'Web application framework', correct: true, question_id: questions[1].id},
+  {title: 'An Android app', correct: false, question_id: questions[1].id},
+  {title: 'Making web applications', correct: true, question_id: questions[2].id},
+  {title: 'Managing databases', correct: false, question_id: questions[2].id},
+  {title: '4', correct: true, question_id: questions[3].id},
+  {title: '5', correct: false, question_id: questions[3].id},
+  {title: '3', correct: true, question_id: questions[4].id},
+  {title: '4', correct: false, question_id: questions[4].id},
+  {}
+])
