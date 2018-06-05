@@ -39,5 +39,4 @@ answers = Answer.create!([
   {title: '5', correct: false, question_id: questions[3].id},
   {title: '3', correct: true, question_id: questions[4].id},
   {title: '4', correct: false, question_id: questions[4].id},
-  {}
 ])
