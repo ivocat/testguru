@@ -40,3 +40,8 @@ answers = Answer.create!([
   {title: '3', correct: true, question_id: questions[4].id},
   {title: '4', correct: false, question_id: questions[4].id},
 ])
+
+test_progresses = TestProgress.create!([
+  {status: 'Completed', test_id: tests[0].id, user_id: users[0].id},
+  {status: 'In Progress', test_id: tests[1].id, user_id: users[0].id}
+  ])
