@@ -1,0 +1,2 @@
+class TestProgress < ApplicationRecord
+end
