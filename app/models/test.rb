@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :questions
   has_many :users, through: :test_progresses
 
