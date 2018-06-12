@@ -15,8 +15,8 @@ categories = Category.create([
 ])
 
 tests = Test.create!([
-  {title: 'Programming languages', level: 1, user_id: users[0].id, category_id: categories[0].id},
-  {title: 'Quick maths', level: 0, user_id: users[0].id, category_id: categories[1].id},
+  {title: 'Programming languages', level: 1, author_id: users[0].id, category_id: categories[0].id},
+  {title: 'Quick maths', level: 0, author_id: users[0].id, category_id: categories[1].id},
 ])
 
 questions = Question.create!([
