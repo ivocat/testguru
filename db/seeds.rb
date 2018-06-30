@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create!([{name: 'John', is_admin: false}, {name: 'Admin', is_admin: true}])
+users = User.create!([{name: 'Admin', is_admin: true}, {name: 'John', is_admin: false}])
 
 categories = Category.create([
   {name: 'Programming'},
@@ -15,8 +15,8 @@ categories = Category.create([
 ])
 
 tests = Test.create!([
-  {title: 'Programming languages', level: 1, category_id: categories[0].id},
-  {title: 'Quick maths', level: 0, category_id: categories[1].id},
+  {title: 'Programming languages', level: 1, author: users[0], category_id: categories[0].id},
+  {title: 'Quick maths', level: 0, author: users[0], category_id: categories[1].id},
 ])
 
 questions = Question.create!([
@@ -42,6 +42,6 @@ answers = Answer.create!([
 ])
 
 test_progresses = TestProgress.create!([
-  {status: 'Completed', test_id: tests[0].id, user_id: users[0].id},
-  {status: 'In Progress', test_id: tests[1].id, user_id: users[0].id}
+  {test_id: tests[0].id, user_id: users[1].id},
+  {test_id: tests[1].id, user_id: users[1].id}
   ])
