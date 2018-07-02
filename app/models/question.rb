@@ -4,5 +4,4 @@ class Question < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :answers, :length => { in: 1..4 }
 end

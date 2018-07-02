@@ -8,12 +8,17 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
-  scope :level_0_to_1, -> { where(level: 0..1) }
-  scope :level_2_to_4, -> { where(level: 2..4) }
-  scope :level_5_and_above, -> { where(level: 5..Float::INFINITY) }
+  scope :level_easy, -> { where(level: 0..1) }
+  scope :level_normal, -> { where(level: 2..4) }
+  scope :level_hard, -> { where(level: 5..Float::INFINITY) }
   scope :by_category, ->(category_name) {
     joins(:category)
       .where(categories: { name: category_name })
-      .order(title: :desc)
   }
+
+  def self.titles_by_category(category_name)
+    joins(:category)
+      .where(categories: { name: category_name })
+      .order(title: :desc).pluck(:title)
+  end
 end
